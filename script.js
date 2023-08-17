@@ -1,5 +1,5 @@
-
-async function fetchAndDisplayXMLTable() {
+// For data parsing
+async function fetchAndDisplayXMLData() {
     document.body.innerHTML.concat("Hello there")
     try {
 
@@ -11,10 +11,10 @@ async function fetchAndDisplayXMLTable() {
         const xmlTable = document.getElementById('xml-table');
         const tableBody = document.createElement('tbody');
 
-        const rows = xmlDoc.querySelectorAll('Row');
+        const rows = xmlDoc.querySelectorAll('SUBSYSTEM');
         rows.forEach(rowElement => {
             const row = document.createElement('tr');
-            const cells = rowElement.querySelectorAll('Cell');
+            const cells = rowElement.querySelectorAll('DEPENDENCY');
 
             cells.forEach(cellElement => {
                 const cell = document.createElement('td');
@@ -39,10 +39,7 @@ async function fetchAndDisplayXMLTable() {
     }
 }
 
-window.onload = fetchAndDisplayXMLTable();
-
-fetchAndDisplayXMLTable();
-
+window.onload = fetchAndDisplayXMLData();
 
 // For subsystems
 const subsystems = [];
